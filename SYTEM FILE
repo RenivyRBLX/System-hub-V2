@@ -1,0 +1,121 @@
+local OrionLib =  loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))() --This Will Load The Script Code
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+		Name = "Key system | System hub V2 Upd 5",
+		HidePremium = false,
+		SaveConfig = true,
+		ConfigFolder = "Key System ".
+        IntroText = "key system..."       
+}) --This Will Load The Script Hub
+
+function MakeScriptHub()
+         local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("System hub V2", "Synapse")
+local Tab = Window:NewTab("Tsb")
+local Section = Tab:NewSection("Tsb")
+Section:NewButton("Tsb Script"), "Patched 😡😡😡", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/SaitamaBattlegrounds.lua"))()
+    print("Clicked")
+end)
+local Tab = Window:NewTab("Executor")
+local Section = Tab:NewSection("SSP")
+Section:NewButton(" Secret Service Panel | Paid version no", "Nah", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MagnumIceCream/SecretServicePanel/6fefdf531e86404fb41b7812e7e84b69c7ea728f/ShakesSSP"))()
+    print("Clicked")
+end)
+local Tab = Window:NewTab("Credits")
+local Section = Tab:NewSection("RenivyRBLX")
+Tab:NewSection("Zonkey")
+local Tab = Window:NewTab("More")
+local Section = Tab:NewSection("Misc")
+Section:NewButton(" Unfair Hub | Works for some games", "Very epic", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/rbIxscriptsnet/unfair/main/rblxhub.lua'),true))()
+    print("Clicked")
+end)
+local Tab = Window:NewTab("System hub V2 Remake")
+local Section = Tab:NewSection("Scripts")
+Section:NewButton("infinite yield | admin", "Universal", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    print("Clicked")
+end)
+Section:NewButton("Xx Ghosthub Xx | Universal", "Troll or Annoyer hub", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))
+    print("Clicked")
+end)
+Section:NewButton(" Betterbypasser V2 | Does not support modern chat", "Universal", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua",true))()
+end) --Put The Script That Will Load If The Key Is Correct Here
+end
+
+OrionLib:MakeNotification({
+	Name = "Logged In!",
+	Content = "You need key "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+}) --Notification
+
+getgenv().Key = "Key_ZonkeyAndRenivy" --Put The Correct Key Here
+getgenv().KeyInput = "string" --Require For The Key To Work
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+}) --Making A Tab
+
+Tab:AddTextbox({
+	Name = "Key",
+	Default = "Enter Key.",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().KeyInput = Value
+	end	  
+}) --You Will Enter The Key Here
+
+Tab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+            OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Correct Key!",
+                Content = "The key you entered is Correct.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(1)
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
+        else
+           OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Incorrect Key!",
+                Content = "The key you entered is incorrect.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+}) --This Will Check The Key You Entered
+
+Tab:AddButton({
+	Name = "Copy Key",
+	Callback = function()
+      		setclipboard("http://sub2unlock.me/rAeelBp") --This Will Copy The Link Of The Key
+  	end    
+}) 
+    
+OrionLib:Init() --Require If The Script Is Done
